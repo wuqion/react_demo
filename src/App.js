@@ -1,9 +1,12 @@
-import React from 'react';
+import React from 'react'
+import Home from './Home'
+import Find from './Find'
 
 function App() {
   return (
     <div >
-dd
+        <Home />
+        <Find />
     </div>
   );
 }
