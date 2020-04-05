@@ -5,8 +5,12 @@ export default class TodoItem extends Component {
     changeState = (id)=>{
         this.props.changeState(id);
     }
+    shouldComponentUpdate(nextProps, nextState){        
+        return nextProps.completed != this.props.completed
+    }
 
     render() {
+        console.log('TodoItem');
         return (
             <ul>
                 {this.props.id} {this.props.title} 
