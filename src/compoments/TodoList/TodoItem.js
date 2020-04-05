@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-export default class TodoItem extends Component {
+export default class TodoItem extends PureComponent {
 
     changeState = (id)=>{
         this.props.changeState(id);
     }
-    shouldComponentUpdate(nextProps, nextState){        
-        return nextProps.completed != this.props.completed
-    }
+    // shouldComponentUpdate(nextProps, nextState){        
+    //     return nextProps.completed != this.props.completed
+    // }
 
     render() {
         console.log('TodoItem');
