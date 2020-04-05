@@ -1,11 +1,13 @@
 import React, { Component,createRef } from 'react'
+import { connect } from 'react-redux'
+import { jiaFun } from '../../actions'
 
 
 const inputRef = createRef();
-export default class TodoInput extends Component {
+class TodoInput extends Component {
 
     addItem = ()=>{
-        this.props.addItem(inputRef.current.value);
+        this.props.dispatch(jiaFun(inputRef.current.value));
     }
     render() {
         return (
@@ -16,3 +18,4 @@ export default class TodoInput extends Component {
         )
     }
 }
+export default connect()(TodoInput);

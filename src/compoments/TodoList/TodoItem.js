@@ -1,9 +1,13 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
+import { changeItem } from '../../actions'
 
-export default class TodoItem extends PureComponent {
+
+class TodoItem extends PureComponent {
 
     changeState = (id)=>{
-        this.props.changeState(id);
+        console.log(this.props)
+        this.props.dispatch(changeItem(id))
     }
     // shouldComponentUpdate(nextProps, nextState){        
     //     return nextProps.completed != this.props.completed
@@ -21,3 +25,4 @@ export default class TodoItem extends PureComponent {
         )
     }
 }
+export default connect()(TodoItem);
