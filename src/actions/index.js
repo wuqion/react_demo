@@ -7,8 +7,13 @@ export const jiaFun=(title)=>{
     }
 }
 export const changeItem =(id)=>{
-    return {
-        id:id,
-        type:types.change
-    }
+    return dispatch=>{
+        setTimeout(()=>{
+            console.log('dd');
+            dispatch({
+                id:id,
+                type:types.change
+            })
+        },5000)
+        }
 }
