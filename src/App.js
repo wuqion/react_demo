@@ -36,11 +36,22 @@ class App extends Component {
       data:tmp
     })
   }
+  changeState = (id)=>{
+    let tmp = this.state.data.map((item)=>{
+      if(item.id == id){
+        item.completed = !item.completed;
+      }
+      return item;
+    });
+    this.setState({
+      data:tmp
+    })
+  }
   render(){
     return (
       <div >
         <TodoInput  addItem={this.addItem}></TodoInput> 
-         <TodoList data={ this.state.data}/>
+         <TodoList data={ this.state.data} changeState={this.changeState}/>
       </div>
     );
   }

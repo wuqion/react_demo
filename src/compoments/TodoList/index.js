@@ -6,7 +6,7 @@ export default class TodoList extends Component {
         return (
             <div>
                 {this.props.data.map((item)=>{
-                    return <TodoItem key={item.id} {...item}/>
+                    return <TodoItem key={item.id} {...item} changeState={this.props.changeState}/>
                 })}
                 
             </div>
