@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import TodoItem from './TodoItem'
-export default class TodoList extends Component {
+import { connect } from 'react-redux'
+
+class TodoList extends Component {
     render() {
+        console.log(this.props)
         return (
             <div>
                 {this.props.data.map((item)=>{
@@ -12,3 +15,10 @@ export default class TodoList extends Component {
         )
     }
 }
+const mapStateToProps= (state)=>{
+    console.log(state);
+    return {
+        data:state.todo
+    }
+}
+export default connect(mapStateToProps)(TodoList)
