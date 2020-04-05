@@ -5,14 +5,24 @@ import {
   TodoList
 } from './compoments'
 
+const data = [{
+  "userId": 1,
+  "id": 1,
+  "title": "delectus aut autem",
+  "completed": false
+},
+{
+  "userId": 1,
+  "id": 2,
+  "title": "quis ut nam facilis et officia qui",
+  "completed": false
+}]
+
 function App() {
   return (
     <div >
-      <TodoHeader title="第一种传值" x='d' z={1} y={9}>
-      第二种传值
-      </TodoHeader>
-      <TodoInput  title="第一种传值" x='d' z={1} y={9}>第二种传值</TodoInput>
-      <TodoList />
+      <TodoInput ></TodoInput> 
+       <TodoList data={data}/>
     </div>
   );
 }
